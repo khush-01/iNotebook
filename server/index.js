@@ -1,12 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./database");
 
 connectDB();
 const app = express();
 const port = 5000;
 
-// JSON parsing middleware
+// Adding middleware
+app.use(cors());
 app.use(express.json());
 
 // Available Routes
